@@ -48,7 +48,7 @@ CREATE
 		impact_with_tag AS impact_tag
 	FROM comma_check_9
 	JOIN comma_test_9 ON comma_check_9.student_id=comma_test_9.student_id
-	JOIN students ON comma_check_9.student_id=students.student_id
+	JOIN demographics ON comma_check_9.student_id=demographics.student_id
 );
 
 -- Creating joint table for demographic data, check/test overall score data, and aggregated scores per comma rule for check/test for students who completed both the check and the test online. (No rule-specific data for students who completed the test on paper.)
