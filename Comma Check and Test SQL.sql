@@ -1,3 +1,5 @@
+-- SQL CLEANING/CREATING THE ENVIRONMENT
+
 -- Updating percent columns to remove "%" and cast as floats so I can work with them as numeric data
 UPDATE comma_check_9
 SET percentage = REPLACE(percentage, '%', '');
@@ -93,7 +95,7 @@ CREATE
 	JOIN rule_test_9 ON all_scores.student_id=rule_test_9.student_id
 );
 
--- Examining the data norms
+-- QUESTION #1: What were the average scores for the check-in and test? What was the typical improvement from the check-in to the test?
 
 SELECT 
 	count(student_id) AS total,
@@ -133,7 +135,7 @@ FROM
 	check_count
 JOIN test_count ON check_count.grade=test_count.grade;
 
--- Finding averages by period, gender, support status, attendance, etc.
+-- QUESTION #2: How did the scores/growth vary by period and demographic factors (e.g., gender, enrollment in support class, attendance, etc.)?
 
 SELECT 
 	period,
@@ -207,7 +209,9 @@ FROM all_scores
 GROUP BY
 	impact_tag;
 
--- Identifying most frquently missed comma rules on test. Since this is stored in two columns (due to ties), I need to create a WITH and join the two tables. This coding only includes students who took the test digitally (n=65) rather than on paper (n=30) since I don't have the weakness data for paper copies
+-- QUESTION #3: Which rule did students struggle with most on the test?
+
+-- Note: This coding only includes students who took the test digitally (n=65) rather than on paper (n=30) since I don't have the weakness data for paper copies
 
 WITH weakness AS (
 	SELECT
@@ -245,7 +249,7 @@ ORDER BY
 	all_weakness_count DESC;
 	
 	
--- Identifying the students who failed the test and if they also struggled on the check-in
+-- QUESTION #4: How many students failed the test? Did they also fail the check-in? Who are they? 
 
 SELECT
 	student_id,
