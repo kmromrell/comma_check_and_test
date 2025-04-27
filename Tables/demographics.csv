@@ -3,10 +3,10 @@ student_id,period,year,gender,absence_s1,absence_s1_rank,absence_q3,absence_q3_r
 1,A1,9,female,0,low,4,middle,0,0,0,0,0,0,0,0,None,None,None
 125,A1,9,female,2,low,1,low,0,0,0,0,0,0,1,0,None,None,TAG
 33,A1,9,male,3,low,4,middle,0,0,0,0,0,0,1,0,None,None,TAG
-132,A1,9,male,6,middle,14,very high,0,0,0,0,0,0,0,0,None,None,None
+132,A1,9,male,6,middle,14,high,0,0,0,0,0,0,0,0,None,None,None
 20,A1,9,male,3,low,3,middle,1,0,0,0,0,0,0,1,LSC,IEP,IEP
-61,A1,9,male,14,high,9,very high,0,1,0,0,0,0,0,1,None,504,504
-50,A1,9,male,16,very high,7,high,0,1,0,0,0,1,0,1,Study Skills,504,504
+61,A1,9,male,14,high,9,high,0,1,0,0,0,0,0,1,None,504,504
+50,A1,9,male,16,high,7,high,0,1,0,0,0,1,0,1,Study Skills,504,504
 17,A1,9,male,0,low,0,low,0,0,0,0,0,0,1,0,None,None,TAG
 18,A1,9,female,0,low,0,low,0,0,0,0,0,0,0,0,None,None,None
 113,A1,9,male,2,low,1,low,0,0,0,0,0,0,0,0,None,None,None
@@ -14,7 +14,7 @@ student_id,period,year,gender,absence_s1,absence_s1_rank,absence_q3,absence_q3_r
 102,A1,9,male,8,middle,7,high,0,0,0,0,0,0,0,0,None,None,None
 75,A1,9,female,10,high,1,low,0,0,0,0,0,0,0,0,None,None,None
 150,A1,9,male,1,low,1,low,0,0,0,0,0,0,0,0,None,None,None
-19,A1,9,female,16,very high,15,very high,0,0,0,0,0,0,0,0,None,None,None
+19,A1,9,female,16,high,15,high,0,0,0,0,0,0,0,0,None,None,None
 11,A1,9,male,7,middle,3,middle,0,0,0,0,0,0,0,0,None,None,None
 31,A1,9,female,2,low,2,low,0,0,0,0,0,0,0,0,None,None,None
 145,A1,9,male,4,low,1,low,0,0,1,0,0,0,1,1,None,ELL,ELL
@@ -136,22 +136,22 @@ student_id,period,year,gender,absence_s1,absence_s1_rank,absence_q3,absence_q3_r
 37,B5,11,female,5,middle,2,low,0,0,0,0,0,0,1,0,None,None,TAG
 108,B5,11,male,6,middle,2,low,0,0,0,0,0,0,0,0,None,None,None
 155,B5,11,male,2,low,1,low,0,0,0,0,0,0,0,0,None,None,None
-39,B5,11,male,8,middle,9,very high,0,0,0,0,0,0,0,0,None,None,None
+39,B5,11,male,8,middle,9,high,0,0,0,0,0,0,0,0,None,None,None
 66,B5,11,male,5,middle,0,low,0,0,0,0,0,0,0,0,None,None,None
 118,B5,11,female,8,middle,8,high,1,0,0,0,0,0,0,1,LSC,IEP,IEP
 136,B5,11,male,7,middle,6,high,0,0,0,0,0,0,1,0,None,None,TAG
 135,B5,11,male,0,low,2,low,0,0,0,0,0,0,0,0,None,None,None
-127,B5,11,female,4,low,10,very high,0,0,0,0,0,0,1,0,None,None,TAG
-55,B5,11,male,19,very high,6,high,0,0,0,0,0,0,0,0,None,None,None
-103,B5,11,male,12,high,14,very high,0,0,0,0,0,0,0,0,None,None,None
+127,B5,11,female,4,low,10,high,0,0,0,0,0,0,1,0,None,None,TAG
+55,B5,11,male,19,high,6,high,0,0,0,0,0,0,0,0,None,None,None
+103,B5,11,male,12,high,14,high,0,0,0,0,0,0,0,0,None,None,None
 36,B5,11,male,4,low,0,low,0,0,0,0,0,0,1,0,None,None,TAG
-121,B5,11,male,17,very high,2,low,0,0,0,0,0,0,0,0,None,None,None
+121,B5,11,male,17,high,2,low,0,0,0,0,0,0,0,0,None,None,None
 40,B5,11,male,8,middle,6,high,0,0,0,0,0,0,1,0,None,None,TAG
 34,B5,11,male,4,low,2,low,0,0,0,0,0,0,0,0,None,None,None
 69,B5,11,male,2,low,1,low,0,0,0,0,0,0,0,0,None,None,None
 28,B5,11,male,6,middle,1,low,0,0,0,0,0,0,0,0,None,None,None
 148,B5,11,male,,low,5,high,0,1,0,0,0,0,0,1,None,504,504
 2,B5,11,male,2,low,0,low,0,0,0,0,0,0,0,0,None,None,None
-154,B5,11,female,11,high,10,very high,0,1,0,0,0,0,0,1,None,504,504
+154,B5,11,female,11,high,10,high,0,1,0,0,0,0,0,1,None,504,504
 26,B5,11,male,8,middle,4,middle,0,0,0,0,0,0,0,0,None,None,None
 57,B5,11,female,1,low,2,low,0,0,0,0,0,0,0,0,None,None,None
