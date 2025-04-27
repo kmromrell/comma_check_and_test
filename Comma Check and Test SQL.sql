@@ -73,28 +73,73 @@ CREATE
 	JOIN rule_test_9 ON all_scores.student_id=rule_test_9.student_id
 );
 
--- Finding period averages (limiting to students who took both the check-in and the test)
+-- Finding averages by period, gender, support status, attendance, etc.
 
 SELECT 
 	period,
-	round(avg(check_precent), 2) AS check_avg_perc,
+	count(student_id) AS total,
+	round(avg(check_percent), 2) AS check_avg_perc,
 	round(avg(test_percent), 2) AS test_avg_perc
-FROM all_data
+FROM all_scores
 GROUP BY
 	period
 ORDER BY
 	period;
+
+SELECT 
+	gender,
+	count(student_id) AS total,
+	round(avg(check_percent), 2) AS check_avg_perc,
+	round(avg(test_percent), 2) AS test_avg_perc
+FROM all_scores
+GROUP BY
+	gender;
 	
-SELECT
-	count(student_id)
-FROM
-	combined_data
-WHERE 
-	score IS NOT NULL
-	AND test_score IS NOT NULL;
-	
-	
-	
+	SELECT 
+	absence_q3,
+	count(student_id) AS total,
+	round(avg(check_percent), 2) AS check_avg_perc,
+	round(avg(test_percent), 2) AS test_avg_perc
+FROM all_scores
+GROUP BY
+	absence_q3;
+
+	SELECT 
+	absence_s1,
+	count(student_id) AS total,
+	round(avg(check_percent), 2) AS check_avg_perc,
+	round(avg(test_percent), 2) AS test_avg_perc
+FROM all_scores
+GROUP BY
+	absence_s1;
+
+SELECT 
+	support_class,
+	count(student_id) AS total,
+	round(avg(check_percent), 2) AS check_avg_perc,
+	round(avg(test_percent), 2) AS test_avg_perc
+FROM all_scores
+GROUP BY
+	support_class;
+
+SELECT 
+	impact,
+	count(student_id) AS total,
+	round(avg(check_percent), 2) AS check_avg_perc,
+	round(avg(test_percent), 2) AS test_avg_perc
+FROM all_scores
+GROUP BY
+	impact;
+
+SELECT 
+	impact_tag,
+	count(student_id) AS total,
+	round(avg(check_percent), 2) AS check_avg_perc,
+	round(avg(test_percent), 2) AS test_avg_perc
+FROM all_scores
+GROUP BY
+	impact_tag;
+
 
 
 
