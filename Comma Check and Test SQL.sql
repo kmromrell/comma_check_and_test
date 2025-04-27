@@ -1,4 +1,4 @@
---Updating percent columns to remove "%" and cast as floats so I can work with them as numeric data
+-- Updating percent columns to remove "%" and cast as floats so I can work with them as numeric data
 UPDATE comma_check_9
 SET percentage = REPLACE(percentage, '%', '');
 
@@ -11,7 +11,7 @@ SET test_percent = REPLACE(test_percent, '%', '');
 ALTER TABLE comma_test_9
 MODIFY COLUMN test_percent FLOAT;
 
---Creating a combined temporary table
+-- Creating a joint table view
 
 WITH combined_data AS (
 	SELECT 
