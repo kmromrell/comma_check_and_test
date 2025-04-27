@@ -13,8 +13,9 @@ MODIFY COLUMN test_percent FLOAT;
 
 -- Creating a joint table view
 
-WITH combined_data AS (
-	SELECT 
+CREATE
+	VIEW combined_data AS (
+		SELECT 
 		comma_check_9.period,
 		comma_check_9.student_id,
 		score,
@@ -23,10 +24,10 @@ WITH combined_data AS (
 		test_percent
 	FROM comma_check_9
 	JOIN comma_test_9 ON comma_check_9.student_id=comma_test_9.student_id
-)
+);
 
+-- Finding period averages (limiting to students who took both the check-in and the test)
 
---Finding period averages (limiting to students who took both the check-in and the test
 SELECT 
 	period,
 	round(avg(percentage), 2) AS check_avg_perc,
@@ -46,5 +47,8 @@ FROM
 	combined_data
 WHERE 
 	score IS NOT NULL
-	AND test_score IS NOT NULL
+	AND test_score IS NOT NULL;
+	
+
+
 
