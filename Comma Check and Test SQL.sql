@@ -22,9 +22,11 @@ CREATE
 		percentage AS check_percent,
 		test_score,
 		test_percent,
+-- calculating the growth/regression from the check to the test
+		round(test_percent - percentage, 2) AS score_change,
 		gender,
 		absence_s1_rank AS absence_s1,
-		absence_q3 AS absence_q3,
+		absence_q3_rank AS absence_q3,
 		support,
 		support_class,
 		most_impact_status AS impact,
@@ -39,19 +41,19 @@ CREATE
 CREATE
 	VIEW all_rules AS (
 		SELECT 
-		comma_check_9.student_id,
-		comma_check_9.period,
-		score AS check_score,
-		percentage AS check_percent,
+		all_scores.student_id,
+		all_scores.period,
+		check_score,
+		check_percent,
 		test_score,
 		test_percent,
 		gender,
-		absence_s1_rank AS absence_s1,
-		absence_q3 AS absence_q3,
+		absence_s1,
+		absence_q3,
 		support,
 		support_class,
-		most_impact_status AS impact,
-		impact_with_tag AS impact_tag,
+		impact,
+		impact_tag,
 		FANBOYS_all	AS fanboys_check,
 		intro_all AS intro_check,
 		quote_all AS quote_check,
@@ -66,11 +68,9 @@ CREATE
 		date_address_test_all AS date_address_test,
 		adjective_test_all AS adjective_test,
 		extra_test_all AS extra_test
-	FROM comma_check_9
-	JOIN comma_test_9 ON comma_check_9.student_id=comma_test_9.student_id
-	JOIN students ON comma_check_9.student_id=students.student_id
-	JOIN rule_check_9 ON comma_check_9.student_id=rule_check_9.student_id
-	JOIN rule_test_9 ON comma_check_9.student_id=rule_test_9.student_id
+	FROM all_scores
+	JOIN rule_check_9 ON all_scores.student_id=rule_check_9.student_id
+	JOIN rule_test_9 ON all_scores.student_id=rule_test_9.student_id
 );
 
 -- Finding period averages (limiting to students who took both the check-in and the test)
