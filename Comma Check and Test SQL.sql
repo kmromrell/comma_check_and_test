@@ -55,6 +55,10 @@ CREATE
 		support_class,
 		impact,
 		impact_tag,
+		weakness AS check_weakness,
+		weakness_tied AS check_weakness_tied,
+		weakness_test,
+		weakness_tied_test,
 		FANBOYS_all	AS fanboys_check,
 		intro_all AS intro_check,
 		quote_all AS quote_check,
@@ -180,7 +184,11 @@ WHERE
 ORDER BY
 	test_percent;
 
+-- Identifying most frquently missed comma rules on test
 
+SELECT
+	test_score,
+	
 
 
 
