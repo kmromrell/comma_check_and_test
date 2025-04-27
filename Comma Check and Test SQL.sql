@@ -232,12 +232,40 @@ WHERE
 ORDER BY
 	test_percent;
 
--- Identifying most frquently missed comma rules on test
+
+-- Identifying most frquently missed comma rules on test. Since this is stored in two columns (due to ties), I need to create a WITH and join the two tables. This coding only includes students who took the test digitally (n=65) rather than on paper (n=30) since I don't have the weakness data for paper copies
+
+WITH weakness AS (
+	SELECT
+		weakness_test,
+		count(weakness_test) AS weakness_count
+	FROM
+		all_rules
+-- Excluding students who had no weaknesses (i.e., got 100%)
+	WHERE
+		weakness_test <> ""
+	GROUP BY
+		weakness_test
+),
+	weakness_2 AS (
+	SELECT
+		weakness_tied_test,
+		count(weakness_tied_test) AS weakness_2_count
+	FROM
+		all_rules
+-- Excluding students who didn't tie for weakness
+	WHERE
+		weakness_tied_test <> ""
+	GROUP BY
+		weakness_tied_test
+)
 
 SELECT
-	test_score,
-	
-
-
-
-
+	weakness_test AS all_weakness,
+-- Use coalesce to address the NULL values resulting from left joining the tied weakness to weakness
+	weakness_count + coalesce(weakness_2_count, 0) AS all_weakness_count
+FROM
+	weakness
+LEFT JOIN weakness_2 ON weakness.weakness_test=weakness_2.weakness_tied_test
+ORDER BY
+	all_weakness_count DESC;
