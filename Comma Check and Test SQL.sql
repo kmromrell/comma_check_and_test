@@ -155,6 +155,32 @@ FROM all_scores
 GROUP BY
 	impact_tag;
 
+-- Identifying the students with the lowest scores
+
+SELECT
+	student_id,
+	test_percent
+FROM
+	all_scores
+WHERE
+	test_percent<60
+ORDER BY
+	test_percent;
+
+SELECT
+	first_name,
+	last_name,
+	test_percent,
+	all_scores.student_id
+FROM
+	all_scores
+JOIN students ON all_scores.student_id=students.student_id
+WHERE
+	test_percent<60
+ORDER BY
+	test_percent;
+
+
 
 
 
