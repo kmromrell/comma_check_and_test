@@ -47,6 +47,7 @@ CREATE
 		check_percent,
 		test_score,
 		test_percent,
+		score_change,
 		gender,
 		absence_s1,
 		absence_q3,
@@ -76,10 +77,18 @@ CREATE
 -- Finding averages by period, gender, support status, attendance, etc.
 
 SELECT 
+		count(student_id) AS total,
+	round(avg(check_percent), 2) AS check_avg_perc,
+	round(avg(test_percent), 2) AS test_avg_perc,
+	round(avg(score_change), 2) AS growth
+FROM all_scores;
+
+SELECT 
 	period,
 	count(student_id) AS total,
 	round(avg(check_percent), 2) AS check_avg_perc,
-	round(avg(test_percent), 2) AS test_avg_perc
+	round(avg(test_percent), 2) AS test_avg_perc,
+	round(avg(score_change), 2) AS growth
 FROM all_scores
 GROUP BY
 	period
@@ -90,7 +99,8 @@ SELECT
 	gender,
 	count(student_id) AS total,
 	round(avg(check_percent), 2) AS check_avg_perc,
-	round(avg(test_percent), 2) AS test_avg_perc
+	round(avg(test_percent), 2) AS test_avg_perc,
+	round(avg(score_change), 2) AS growth
 FROM all_scores
 GROUP BY
 	gender;
@@ -99,7 +109,8 @@ GROUP BY
 	absence_q3,
 	count(student_id) AS total,
 	round(avg(check_percent), 2) AS check_avg_perc,
-	round(avg(test_percent), 2) AS test_avg_perc
+	round(avg(test_percent), 2) AS test_avg_perc,
+	round(avg(score_change), 2) AS growth
 FROM all_scores
 GROUP BY
 	absence_q3;
@@ -108,7 +119,8 @@ GROUP BY
 	absence_s1,
 	count(student_id) AS total,
 	round(avg(check_percent), 2) AS check_avg_perc,
-	round(avg(test_percent), 2) AS test_avg_perc
+	round(avg(test_percent), 2) AS test_avg_perc,
+	round(avg(score_change), 2) AS growth
 FROM all_scores
 GROUP BY
 	absence_s1;
@@ -117,7 +129,8 @@ SELECT
 	support_class,
 	count(student_id) AS total,
 	round(avg(check_percent), 2) AS check_avg_perc,
-	round(avg(test_percent), 2) AS test_avg_perc
+	round(avg(test_percent), 2) AS test_avg_perc,
+	round(avg(score_change), 2) AS growth
 FROM all_scores
 GROUP BY
 	support_class;
@@ -126,7 +139,8 @@ SELECT
 	impact,
 	count(student_id) AS total,
 	round(avg(check_percent), 2) AS check_avg_perc,
-	round(avg(test_percent), 2) AS test_avg_perc
+	round(avg(test_percent), 2) AS test_avg_perc,
+	round(avg(score_change), 2) AS growth
 FROM all_scores
 GROUP BY
 	impact;
@@ -135,10 +149,12 @@ SELECT
 	impact_tag,
 	count(student_id) AS total,
 	round(avg(check_percent), 2) AS check_avg_perc,
-	round(avg(test_percent), 2) AS test_avg_perc
+	round(avg(test_percent), 2) AS test_avg_perc,
+	round(avg(score_change), 2) AS growth
 FROM all_scores
 GROUP BY
 	impact_tag;
+
 
 
 
