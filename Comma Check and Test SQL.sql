@@ -20,8 +20,23 @@ CREATE
 		comma_check_9.period,
 		score AS check_score,
 		percentage AS check_percent,
+-- creating a field with the letter grade 
+		CASE
+			WHEN percentage >=90 THEN "A"
+			WHEN percentage >=80 THEN "B"
+			WHEN percentage >=70 THEN "C"
+			WHEN percentage >=60 THEN "D"
+			ELSE "F"
+		END AS check_grade,
 		test_score,
 		test_percent,
+		CASE
+			WHEN test_percent >=90 THEN "A"
+			WHEN test_percent >=80 THEN "B"
+			WHEN test_percent >=70 THEN "C"
+			WHEN test_percent >=60 THEN "D"
+			ELSE "F"
+		END AS test_grade,
 -- calculating the growth/regression from the check to the test
 		round(test_percent - percentage, 2) AS score_change,
 		gender,
@@ -43,11 +58,11 @@ CREATE
 		SELECT 
 		all_scores.student_id,
 		all_scores.period,
-		check_score,
 		check_percent,
-		test_score,
 		test_percent,
 		score_change,
+		check_grade,
+		test_grade,
 		gender,
 		absence_s1,
 		absence_q3,
@@ -78,14 +93,47 @@ CREATE
 	JOIN rule_test_9 ON all_scores.student_id=rule_test_9.student_id
 );
 
--- Finding averages by period, gender, support status, attendance, etc.
+-- Examining the data norms
 
 SELECT 
-		count(student_id) AS total,
+	count(student_id) AS total,
 	round(avg(check_percent), 2) AS check_avg_perc,
 	round(avg(test_percent), 2) AS test_avg_perc,
 	round(avg(score_change), 2) AS growth
 FROM all_scores;
+
+WITH check_count AS (
+	SELECT
+		check_grade AS grade,
+		count(check_grade) AS check_count
+	FROM
+		all_scores
+	GROUP BY
+		check_grade
+	ORDER BY
+		grade
+),
+	test_count AS (
+	SELECT
+		test_grade AS grade,
+		count(test_grade) AS test_count
+	FROM
+		all_scores
+	GROUP BY
+		test_grade
+	ORDER BY
+		grade
+)
+
+SELECT
+	test_count.grade,
+	check_count,
+	test_count
+FROM
+	check_count
+JOIN test_count ON check_count.grade=test_count.grade;
+
+-- Finding averages by period, gender, support status, attendance, etc.
 
 SELECT 
 	period,
