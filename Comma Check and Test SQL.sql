@@ -207,32 +207,6 @@ FROM all_scores
 GROUP BY
 	impact_tag;
 
--- Identifying the students with the lowest scores
-
-SELECT
-	student_id,
-	test_percent
-FROM
-	all_scores
-WHERE
-	test_percent<60
-ORDER BY
-	test_percent;
-
-SELECT
-	first_name,
-	last_name,
-	test_percent,
-	all_scores.student_id
-FROM
-	all_scores
-JOIN students ON all_scores.student_id=students.student_id
-WHERE
-	test_percent<60
-ORDER BY
-	test_percent;
-
-
 -- Identifying most frquently missed comma rules on test. Since this is stored in two columns (due to ties), I need to create a WITH and join the two tables. This coding only includes students who took the test digitally (n=65) rather than on paper (n=30) since I don't have the weakness data for paper copies
 
 WITH weakness AS (
@@ -269,3 +243,33 @@ FROM
 LEFT JOIN weakness_2 ON weakness.weakness_test=weakness_2.weakness_tied_test
 ORDER BY
 	all_weakness_count DESC;
+	
+	
+-- Identifying the students who failed the test and if they also struggled on the check-in
+
+SELECT
+	student_id,
+	check_percent,
+	test_percent
+FROM
+	all_scores
+WHERE
+	test_percent<60
+ORDER BY
+	test_percent;
+
+-- This query tells me the students names using data that is private for confidentiality reasons
+
+SELECT
+	first_name,
+	last_name,
+	test_percent,
+	check_percent,
+	all_scores.student_id
+FROM
+	all_scores
+JOIN names ON all_scores.student_id=names.student_id
+WHERE
+	test_percent<60
+ORDER BY
+	test_percent;
