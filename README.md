@@ -75,7 +75,7 @@ This data results from the first query under "QUESTION #2" in the SQL code
 
 #### Data-informed Recommendations
 * Reteach commas for coordinate adjectives, FANBOYS, and quotes/dialogue
-* Reach out to LSC (who supports the students with IEP) and organize additional reviews and learning of comma rules
+* Reach out to LSC (class supporting students with IEPs) and organize additional reviews of comma rules
 * Continue instruction to give students/groups with high growth rates but lower scores the chance to catch up
 
 #### Future Analysis Improvements
