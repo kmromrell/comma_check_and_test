@@ -139,7 +139,7 @@ FROM all_scores
 GROUP BY
 	gender;
 	
-	SELECT 
+SELECT 
 	absence_q3,
 	count(student_id) AS total,
 	round(avg(check_percent), 2) AS check_avg_perc,
@@ -147,9 +147,11 @@ GROUP BY
 	round(avg(score_change), 2) AS growth
 FROM all_scores
 GROUP BY
-	absence_q3;
+	absence_q3
+ORDER BY
+	test_avg_perc DESC;
 
-	SELECT 
+SELECT 
 	absence_s1,
 	count(student_id) AS total,
 	round(avg(check_percent), 2) AS check_avg_perc,
@@ -157,7 +159,9 @@ GROUP BY
 	round(avg(score_change), 2) AS growth
 FROM all_scores
 GROUP BY
-	absence_s1;
+	absence_s1
+ORDER BY
+	test_avg_perc DESC;
 
 SELECT 
 	support_class,
@@ -167,7 +171,9 @@ SELECT
 	round(avg(score_change), 2) AS growth
 FROM all_scores
 GROUP BY
-	support_class;
+	support_class
+ORDER BY
+	test_avg_perc DESC;
 
 SELECT 
 	impact,
@@ -177,7 +183,9 @@ SELECT
 	round(avg(score_change), 2) AS growth
 FROM all_scores
 GROUP BY
-	impact;
+	impact
+ORDER BY
+	test_avg_perc DESC;
 
 SELECT 
 	impact_tag,
@@ -187,7 +195,9 @@ SELECT
 	round(avg(score_change), 2) AS growth
 FROM all_scores
 GROUP BY
-	impact_tag;
+	impact_tag
+ORDER BY
+	test_avg_perc DESC;
 
 -- QUESTION #3: Which rule did students struggle with most on the test?
 
