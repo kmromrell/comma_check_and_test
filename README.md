@@ -4,10 +4,10 @@
 As a Freshman English teacher, I designed a unit to assess and support student learning of seven standard comma rules. After the initial comma instruction, students completed an ungraded comma check-in quiz. They then received targeted study materials to help them practice their weakest rules and were given a graded comma test two weeks later. This project analyzes the effectiveness of the practice in creating growth and explores trends across periods and demographics using MySQL.
 
 #### Research Questions
-* **Average Improvement**: What were the average scores for the check-in and the test? What was the typical improvement between the two?
-* **Demographic and Period Trends**: How did scores and growth vary by period and demographic factors (gender, support class enrollment, attendance, etc.)?
-* **Comma Rule Weaknesses**: Which comma rule(s) did students continue to struggle with most on the test?
-* **Failure Rates**: How many students failed the test? Did they also fail the check-in?
+1. **Average Improvement**: What were the average scores for the check-in and the test? What was the typical improvement between the two?
+2. **Demographic and Period Trends**: How did scores and growth vary by period and demographic factors (gender, support class enrollment, attendance, etc.)?
+3. **Comma Rule Weaknesses**: Which comma rule(s) did students continue to struggle with most on the test?
+4. **Failure Rates**: How many students failed the test? Did they also fail the check-in?
 
 ### 🗂️ Data Overview
 #### Data Sources: Cleaned and anonymized data can be found in "Tables" folder 
@@ -64,14 +64,14 @@ This data results from the first query under "QUESTION #2" in the SQL code
 
 ### 🧠 Conclusions and Next Steps
 #### Research Question Answers
-* **Average Improvement**: On average, students received a low C on the check-in and a low B on the test, demonstrating an average growth of 11%
-* **Demographic and Period Trends**:
-  * Period A1 received the highest scores and A4 receive the lowest, but A4 showed the most improvement
-  * Students enrolled in support classes did poorer on the check-in/test but generally showed more growth. This wasn't the case for the LSC class.
-  * Test results varied by impact status (e.g., students with IEPs, 504 plans, ELL status, TAG status, etc.). TAG students scored significantly higher (but showed less growth). 504/IEP students scored lower, with IEP students showing less relative growth as well. ELL students regressed on the test, but since there are only two ELL students, it is hard to generalize those results.
-  * Attendance did not appear to be significantly correlated with score
-* **Comma Rule Weaknesses**: Students struggled most with commas for coordinate adjectives, FANBOYS, and quotes/dialogue 
-* **Failure Rates**: Overall, 6 students failed the comma test, all of which received a low D or lower on the check-in. These students all showed low or regressive growth from the check-in to the test
+1. **Average Improvement**: On average, students received a low C on the check-in and a low B on the test, demonstrating an average growth of 11%
+2. **Demographic and Period Trends**:
+   * Period A1 received the highest scores and A4 receive the lowest, but A4 showed the most improvement
+   * Students enrolled in support classes did poorer on the check-in/test but generally showed more growth. This wasn't the case for the LSC class.
+   * Test results varied by impact status (e.g., students with IEPs, 504 plans, ELL status, TAG status, etc.). TAG students scored significantly higher (but showed less growth). 504/IEP students scored lower, with IEP students showing less relative growth as well. ELL students regressed on the test, but since there are only two ELL students, it is hard to generalize those results.
+   * Attendance did not appear to be significantly correlated with score
+3. **Comma Rule Weaknesses**: Students struggled most with commas for coordinate adjectives, FANBOYS, and quotes/dialogue
+4. **Failure Rates**: Overall, 6 students failed the comma test, all of which received a low D or lower on the check-in. These students all showed low or regressive growth from the check-in to the test
 
 #### Data-informed Recommendations
 * Reteach commas for coordinate adjectives, FANBOYS, and quotes/dialogue
