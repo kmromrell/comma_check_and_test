@@ -15,9 +15,8 @@ MODIFY COLUMN test_percent FLOAT;
 
 -- Creating joint table for demographic data and check/test overall score data for students who completed both the check and the test
 
-CREATE
-	VIEW all_scores AS (
-		SELECT 
+CREATE VIEW all_scores AS (
+	SELECT 
 		comma_check_9.student_id,
 		comma_check_9.period,
 		score AS check_score,
@@ -55,9 +54,8 @@ CREATE
 
 -- Creating joint table for demographic data, check/test overall score data, and aggregated scores per comma rule for check/test for students who completed both the check and the test online. (No rule-specific data for students who completed the test on paper.)
 
-CREATE
-	VIEW all_rules AS (
-		SELECT 
+CREATE VIEW all_rules AS (
+	SELECT 
 		all_scores.student_id,
 		test_percent,
 		test_grade,
