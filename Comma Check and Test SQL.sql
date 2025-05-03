@@ -61,7 +61,6 @@ CREATE VIEW all_rules AS (
 		test_grade,
 		weakness_test,
 		weakness_tied_test,
-		fanboys_test_all AS fanboys_test,
 		intro_test_all AS intro_test,
 		quote_test_all AS quote_test,
 		list_test_all AS list_test,
@@ -69,7 +68,6 @@ CREATE VIEW all_rules AS (
 		adjective_test_all AS adjective_test,
 		extra_test_all AS extra_test
 	FROM all_scores
-	JOIN rule_check_9 USING(student_id)
 	JOIN rule_test_9 USING(student_id)
 );
 
