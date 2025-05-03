@@ -49,8 +49,8 @@ CREATE
 		most_impact_status AS impact,
 		impact_with_tag AS impact_tag
 	FROM comma_check_9
-	JOIN comma_test_9 ON comma_check_9.student_id=comma_test_9.student_id
-	JOIN demographics ON comma_check_9.student_id=demographics.student_id
+	JOIN comma_test_9 USING(student_id)
+	JOIN demographics USING(student_id)
 );
 
 -- Creating joint table for demographic data, check/test overall score data, and aggregated scores per comma rule for check/test for students who completed both the check and the test online. (No rule-specific data for students who completed the test on paper.)
@@ -71,8 +71,8 @@ CREATE
 		adjective_test_all AS adjective_test,
 		extra_test_all AS extra_test
 	FROM all_scores
-	JOIN rule_check_9 ON all_scores.student_id=rule_check_9.student_id
-	JOIN rule_test_9 ON all_scores.student_id=rule_test_9.student_id
+	JOIN rule_check_9 USING(student_id)
+	JOIN rule_test_9 USING(student_id)
 );
 
 -- QUESTION #1: What were the average scores for the check-in and test? What was the typical improvement from the check-in to the test?
