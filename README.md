@@ -9,24 +9,6 @@ As a Freshman English teacher, I designed a unit to assess and support student l
 3. **Comma Rule Weaknesses**: Which comma rule(s) did students continue to struggle with most on the test?
 4. **Failure Rates**: How many students failed the test? Did they also fail the check-in?
 
-### 🗂️ Data Overview
-#### Data Sources: Cleaned and anonymized data can be found in "Tables" folder 
-* **Check-In and Test Data**: Collected through Google Forms quizzes
-* **Demographic Data**: Exported from Synergy (student records system)
-
-#### Table Key
-* comma_check_9: Check-in quiz results
-* comma_test_9: Test results
-* demographics: Student demographic information
-* rule_check_9:  Aggregated scores per comma rule in check-in
-* rule_test_9:  Aggregated scores per comma rule in test
-* names: Private file with student names correlated to ID numbers (excluded from public uploads)
-
-#### Repository Files/Folders
-* README.md: Project overview and documentation.
-* comma_rules_analysis.sql: Full SQL code for cleaning, creating tables, and answering research questions
-* TABLES/: folder including all non-confidential datasets
-
 ### 🛠️ Data Cleaning and Analysis
 #### Data Preparation: Initial cleaning was completed in Google Sheets unless otherwise specified
 * Assigned randomized student ID numbers to ensure anonymity and lined up IDs across multiple sheets
