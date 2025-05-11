@@ -1,0 +1,18 @@
+### 🗂️ Data Overview
+#### Data Sources: Cleaned and anonymized data can be found in "Tables" folder 
+* **Check-In and Test Data**: Collected through Google Forms quizzes
+* **Demographic Data**: Exported from Synergy (student records system)
+
+#### Table Key
+* comma_check_9: Check-in quiz results
+* comma_test_9: Test results
+* demographics: Student demographic information
+* rule_check_9:  Aggregated scores per comma rule in check-in
+* rule_test_9:  Aggregated scores per comma rule in test
+* names: Private file with student names correlated to ID numbers (excluded from public uploads)
+
+#### Repository Files/Folders
+* README.md: Project overview and documentation.
+* comma_rules_analysis.sql: Full SQL code for cleaning, creating tables, and answering research questions
+* data_overview: This document, intended to give overview of the data sources, tables, and files
+* TABLES/: Folder including all non-confidential datasets
