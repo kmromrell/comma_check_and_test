@@ -3,7 +3,7 @@
 ### 📝 Project Overview
 As a Freshman English teacher, I designed a unit to assess and support student learning of seven standard comma rules. After the initial comma instruction, students completed an ungraded comma check-in quiz. They then received targeted study materials to help them practice their weakest rules and were given a graded comma test two weeks later. This project analyzes the effectiveness of the practice in creating growth and explores trends across periods and demographics using MySQL.
 
-#### Research Questions
+#### Analysis Questions
 1. **Average Improvement**: What were the average scores for the check-in and the test? What was the typical improvement between the two?
 2. **Demographic and Period Trends**: How did scores and growth vary by period and demographic factors (gender, support class enrollment, attendance, etc.)?
 3. **Comma Rule Weaknesses**: Which comma rule(s) did students continue to struggle with most on the test?
@@ -45,7 +45,7 @@ This data results from the first query under "QUESTION #2" in the SQL code
 | B8     | 23             | 73.93            | 83.74        | 9.81       |
 
 ### 🧠 Conclusions and Next Steps
-#### Research Question Answers
+#### Analysis Question Answers
 1. **Average Improvement**: On average, students received a low C on the check-in and a low B on the test, demonstrating an average growth of 11%
 2. **Demographic and Period Trends**:
    * Period A1 received the highest scores and A4 receive the lowest, but A4 showed the most improvement
