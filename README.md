@@ -3,7 +3,7 @@
 ### 📝 Project Overview
 This project analyzes student performance on an ungraded check-in quiz and a graded test after targeted comma instruction. The goal was to measure growth, identify persistent weaknesses, and highlight trends by period and demographic group. All analysis was conducted using MySQL after initial cleaning in Google Sheets.
 
-### ❓ Analysis Questions
+### ❓ Driving Questions
 1. **Average Improvement**: What were the average scores for the check-in and the test? What was the typical improvement between the two?
 2. **Demographic and Period Trends**: How did scores and growth vary by period and demographic factors (gender, support class enrollment, attendance, etc.)?
 3. **Comma Rule Weaknesses**: Which comma rule(s) did students continue to struggle with most on the test?
